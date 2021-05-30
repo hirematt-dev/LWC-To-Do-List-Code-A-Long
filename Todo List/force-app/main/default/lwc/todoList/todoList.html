@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Todo List">
+        <c-add-item onsubmittask={addTask}></c-add-item>
+        <template if:true={areTasks}>
+            <template for:each={tasklist} for:item="task" for:index="index">
+                <c-todo-item key={task.taskId} oncompletedclicked={completedClicked} task={task}></c-todo-item>
+            </template>
+        </template>
+        <template if:false={areTasks}>
+            <p>There are no tasks to complete!</p>
+        </template>
+    </lightning-card>
+</template>

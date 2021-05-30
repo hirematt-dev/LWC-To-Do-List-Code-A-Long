@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-box">
+        <template if:false={task.completed}>
+            <lightning-icon icon-name="action:approval" onclick={handleClick}></lightning-icon>
+        </template>
+        <template if:true={task.completed}>
+            <lightning-icon  icon-name="action:recall" onclick={handleClick}></lightning-icon>
+        </template>
+        <p class={textStyle}>{task.task}</p>
+    </div>
+</template>
